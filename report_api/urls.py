@@ -17,6 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from report.views import GenerateReportView, RetrieveReportView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('get_report/', RetrieveReportView.as_view()),
+    path('trigger_report/', GenerateReportView.as_view()),
+
 ]
